@@ -15,5 +15,6 @@ Redmine::Plugin.register :redmine_parking_lot_chart do
   end
 
   menu :project_menu, :parking_lot_chart, { :controller => 'parking_lot_chart', :action => 'index' },
-  :caption => :parking_lot_chart, :after => :roadmap, :param => :project_id
+  :caption => :parking_lot_chart, :before => :issues, :param => :project_id
+  delete_menu_item :project_menu, :roadmap
 end
